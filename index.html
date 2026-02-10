@@ -216,6 +216,43 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
+        /* Career Goals */
+        .career-goals {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .goals-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .goal-stage {
+            flex: 1 1 250px;
+            background-color: #fff;
+            padding: 1.2rem;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .goal-stage h4 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+        .goal-stage ul {
+            list-style-position: inside;
+            line-height: 1.7;
+            color: #34495e;
+            font-size: 0.95rem;
+        }
+        .goal-stage li {
+            margin-bottom: 0.5rem;
+        }
+        .goal-stage li:last-child {
+            margin-bottom: 0;
+        }
         /* Contact */
         .contact {
             text-align: center;
@@ -252,6 +289,42 @@
         <div id="intro" class="section intro">
             <h2>About Me</h2>
             <p>As a holder of a Higher Diploma in Mechanical Engineering, I have a solid foundation in 3D modeling, mechanical test simulation, and equipment principles. Proficient in using SolidWorks for modeling and structural optimization, I have participated in mechanical part optimization projects where I solved load-bearing issues through simulation testing, gaining practical operation and problem-solving experience. Detail-oriented, rigorous, and with strong teamwork and fast learning abilities, I can quickly adapt to technical roles. I look forward to contributing my professional skills to enterprises in fields such as equipment commissioning and mechanical design.</p>
+        </div>
+
+        <!-- Career Goals (短中长期目标) -->
+        <div class="section">
+            <h2>Career Goals</h2>
+            <div class="career-goals">
+                <div class="goals-container">
+                    <!-- 短期目标 -->
+                    <div class="goal-stage">
+                        <h4>Short-term (0-2 Years)</h4>
+                        <ul>
+                            <li>Secure an entry-level Elevator & Escalator Maintenance Technician position to gain hands-on experience in equipment inspection and routine maintenance</li>
+                            <li>Obtain EMSD Registered Elevator/Escalator Engineer Qualification to meet professional requirements for technical operations</li>
+                            <li>Master on-site troubleshooting skills for common elevator faults, supported by mechanical assembly and SolidWorks technical drawing reading abilities</li>
+                        </ul>
+                    </div>
+                    <!-- 中期目标 -->
+                    <div class="goal-stage">
+                        <h4>Mid-term (3-5 Years)</h4>
+                        <ul>
+                            <li>Promote to Senior Maintenance Technician, taking charge of complex maintenance tasks (e.g., elevator system upgrades, component replacement)</li>
+                            <li>Develop expertise in elevator safety standards and emergency repair protocols, becoming a key team member for critical fault handling</li>
+                            <li>Learn basic elevator design principles (leveraging SolidWorks) to better align maintenance work with product performance requirements</li>
+                        </ul>
+                    </div>
+                    <!-- 长期目标 -->
+                    <div class="goal-stage">
+                        <h4>Long-term (5+ Years)</h4>
+                        <ul>
+                            <li>Advance to a Technical Supervisor role, leading a maintenance team to optimize workflow and ensure service quality</li>
+                            <li>Specialize in smart elevator technology (e.g., IoT-based monitoring systems) to stay updated with industry development trends</li>
+                            <li>Contribute to the improvement of elevator maintenance processes or component designs, combining practical experience with technical skills (SolidWorks, CAD)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Education & Experience -->
@@ -323,7 +396,7 @@
             </div>
         </div>
 
-        <!-- Portfolio（已替换为你的两张图片） -->
+        <!-- Portfolio（含两张项目图） -->
         <div class="section">
             <h2>Portfolio</h2>
             <div class="works-container">
