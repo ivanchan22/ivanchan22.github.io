@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAN Shek Him - Mechanical Engineering Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        /* Hero Section */
+        .hero {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .profile-img-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        .hero .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #2c3e50;
+        }
+        .btn-secondary:hover {
+            background-color: #f8f9fa;
+        }
+        /* 下载按钮样式 */
+        .download-resume {
+            padding: 0.9rem 2rem;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 8px rgba(39,174,96,0.2);
+        }
+        .download-resume:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(39,174,96,0.3);
+        }
+        /* Common Section Style */
+        .section {
+            padding: 2.5rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        .section h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #3498db;
+            border-radius: 2px;
+        }
+        /* About Me */
+        .intro p {
+            line-height: 1.8;
+            color: #34495e;
+            font-size: 1.05rem;
+        }
+        /* Experience & Education */
+        .experience-item, .edu-item {
+            margin-bottom: 1.5rem;
+        }
+        .experience-item:last-child, .edu-item:last-child {
+            margin-bottom: 0;
+        }
+        .experience-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .experience-title, .edu-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        .experience-time, .edu-time {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        .experience-content, .edu-content {
+            color: #34495e;
+            line-height: 1.6;
+            padding-left: 0.5rem;
+        }
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .skill-tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #2196f3;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-right: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        .soft-skill {
+            color: #34495e;
+            line-height: 1.8;
+        }
+        /* Portfolio */
+        .works-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .work-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .work-img {
+            height: 180px;
+            overflow: hidden;
+        }
+        .work-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .work-content {
+            padding: 1.2rem;
+        }
+        .work-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .work-desc {
+            color: #34495e;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        /* Contact */
+        .contact {
+            text-align: center;
+            padding: 2.5rem 2rem;
+        }
+        .contact-info {
+            color: #34495e;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .contact-info span {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section / Personal Card (含照片) -->
+        <div class="hero">
+            <div class="profile-img-wrapper">
+                <img src="profile.jpg" alt="CHAN Shek Him" class="profile-img">
+            </div>
+            <h1>CHAN Shek Him</h1>
+            <div class="tagline">Higher Diploma in Mechanical Engineering | Specialized in Mechanical Design / Equipment Commissioning / 3D Modeling</div>
+            <div class="buttons">
+                <a href="#intro" class="btn btn-primary">Explore My Strengths</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+
+        <!-- About Me -->
+        <div id="intro" class="section intro">
+            <h2>About Me</h2>
+            <p>As a holder of a Higher Diploma in Mechanical Engineering, I have a solid foundation in 3D modeling, mechanical test simulation, and equipment principles. Proficient in using SolidWorks for modeling and structural optimization, I have participated in mechanical part optimization projects where I solved load-bearing issues through simulation testing, gaining practical operation and problem-solving experience. Detail-oriented, rigorous, and with strong teamwork and fast learning abilities, I can quickly adapt to technical roles. I look forward to contributing my professional skills to enterprises in fields such as equipment commissioning and mechanical design.</p>
+        </div>
+
+        <!-- Education & Experience -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <div class="edu-title">IVE (Lee Wai Lee) | Higher Diploma in Mechanical Engineering</div>
+                    <div class="edu-time">2024 - Present</div>
+                </div>
+                <div class="edu-content">
+                    Core Courses: 3D Modeling, Equipment Principles, Mechanics of Materials, Mechanical Test Simulation, Numerical Analysis<br>
+                    Academic Highlights: Mastered fundamental mechanical engineering theories and gained practical project experience
+                </div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <div class="edu-title">Diploma of Vocational Education</div>
+                    <div class="edu-time">2023 - 2024</div>
+                </div>
+                <div class="edu-content">
+                    Laid a solid foundation in mechanical engineering, fostering engineering thinking and practical awareness
+                </div>
+            </div>
+
+            <h2 style="margin-top: 2.5rem;">Projects & Practical Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Mechanical Part Optimization Project | Team Member</div>
+                    <div class="experience-time">Jan 2025 - Mar 2025</div>
+                </div>
+                <div class="experience-content">
+                    Background: Optimized the design of small equipment parts to solve insufficient load-bearing capacity<br>
+                    Actions: Completed 3D modeling with SolidWorks, conducted stress testing via simulation software, and adjusted part structure parameters<br>
+                    Results: Improved part load-bearing capacity by 15%, the optimization plan was recognized by supervisors, enhancing structural design and problem-solving skills
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Huizhou Watch Factory Visit & Exchange Activity</div>
+                    <div class="experience-time">Jul 24, 2025</div>
+                </div>
+                <div class="experience-content">
+                    Gained insights into the watch industry's production process, factory equipment operation principles, and workshop environment management. Deepened understanding of the mechanical manufacturing industry and learned basic logic of equipment maintenance and commissioning.
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Hard Skills</h3>
+                    <span class="skill-tag">SolidWorks 3D Modeling (Proficient)</span>
+                    <span class="skill-tag">Mechanical Test Simulation (Proficient)</span>
+                    <span class="skill-tag">Office Software (Expert)</span>
+                    <span class="skill-tag">Numerical Analysis (Basic)</span>
+                    <span class="skill-tag">Cantonese/Mandarin (Fluent)</span>
+                    <span class="skill-tag">English (Basic, Reading & Writing)</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="soft-skill">• Team Collaboration: Efficiently divided tasks and synchronized progress to achieve goals in 3-person projects</div>
+                    <div class="soft-skill">• Problem-Solving: Identified and resolved part jamming issues in simulation tests by optimizing parameters</div>
+                    <div class="soft-skill">• Attention to Detail: Accurately completed test report filling and data recording</div>
+                    <div class="soft-skill">• Fast Learning: Quickly mastered key points of new tools and technologies</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio（已替换为你的两张图片） -->
+        <div class="section">
+            <h2>Portfolio</h2>
+            <div class="works-container">
+                <div class="work-card">
+                    <div class="work-img">
+                        <img src="simulation.jpg" alt="Mechanical Stress Simulation Result">
+                    </div>
+                    <div class="work-content">
+                        <div class="work-title">Mechanical Structure Stress Simulation Analysis</div>
+                        <div class="work-desc">Used SolidWorks Simulation to analyze the stress distribution of beam structures under load, identifying high-stress areas and optimizing structural parameters to improve load-bearing capacity.</div>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-img">
+                        <img src="gear-assembly.jpg" alt="Gear System 3D Modeling">
+                    </div>
+                    <div class="work-content">
+                        <div class="work-title">Gear Transmission System 3D Assembly Design</div>
+                        <div class="work-desc">Completed 3D modeling and assembly of gear transmission components in SolidWorks, verifying the rationality of component fit and motion through multi-view display.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div id="contact" class="section contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>Phone: <span>+852 6579 8219</span></p>
+                <p>Email: <span>240174381@stu.vtc.edu.hk</span></p>
+                <p>Thank you for visiting my personal website. I look forward to further communication!</p>
+            </div>
+            <a href="CHAN_Shek_Him_Resume.pdf" class="btn download-resume" target="_blank">Download Resume (PDF)</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
